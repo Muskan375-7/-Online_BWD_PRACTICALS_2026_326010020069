@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Table</title>
+</head>
+<body>
+
+    <h1 align="center">BCA Semester 1 &ndash; Result Sheet</h1>
+    <p align="center">Each subject is out of 100 marks. Maximum total = 500.</p>
+
+    <!-- Table attributes: border, cellpadding, cellspacing, width, align -->
+    <table border="1" cellpadding="8" cellspacing="0" width="90%" align="center">
+        <caption><b>Table: Semester 1 Marks of Students</b></caption>
+
+        <!-- Two header rows using rowspan and colspan -->
+        <thead bgcolor="#d9e2f3">
+            <tr>
+                <th rowspan="2">Roll No.</th>
+                <th rowspan="2">Student Name</th>
+                <th colspan="5">Subject Marks (out of 100)</th>
+                <th rowspan="2">Total<br>(500)</th>
+                <th rowspan="2">Percentage</th>
+                <th rowspan="2">Grade</th>
+            </tr>
+            <tr>
+                <th>Web Dev</th>
+                <th>aoc</th>
+                <th>entrepreneurship</th>
+                <th>Maths</th>
+                <th>pp1</th>
+            </tr>
+        </thead>
+
+        <tbody align="center">
+            <tr>
+                <td>1</td>
+                <td align="left">siya sing</td>
+                <td>92</td>
+                <td>88</td>
+                <td>85</td>
+                <td>90</td>
+                <td>87</td>
+                <td>442</td>
+                <td>88.4%</td>
+                <td bgcolor="#c6efce"><b>A+</b></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td align="left">Diya Bharti</td>
+                <td>78</td>
+                <td>82</td>
+                <td>75</td>
+                <td>80</td>
+                <td>85</td>
+                <td>400</td>
+                <td>80.0%</td>
+                <td bgcolor="#c6efce"><b>A</b></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td align="left">Minu Mehta</td>
+                <td>65</td>
+                <td>70</td>
+                <td>68</td>
+                <td>60</td>
+                <td>72</td>
+                <td>335</td>
+                <td>67.0%</td>
+                <td bgcolor="#ffeb9c"><b>B</b></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td align="left">Riya Joshi</td>
+                <td>55</td>
+                <td>58</td>
+                <td>50</td>
+                <td>52</td>
+                <td>60</td>
+                <td>275</td>
+                <td>55.0%</td>
+                <td bgcolor="#ffeb9c"><b>C</b></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td align="left">Siya kumari</td>
+                <td>40</td>
+                <td>35</td>
+                <td>42</td>
+                <td>30</td>
+                <td>45</td>
+                <td>192</td>
+                <td>38.4%</td>
+                <td bgcolor="#ffc7ce"><b>F</b></td>
+            </tr>
+        </tbody>
+
+        <tfoot bgcolor="#f2f2f2">
+            <tr>
+                <td colspan="10" align="center">
+                    <b>Grade Scale:</b>
+                    A+ (&ge; 85%) &nbsp;|&nbsp; A (75&ndash;84%) &nbsp;|&nbsp; B (60&ndash;74%) &nbsp;|&nbsp;
+                    C (40&ndash;59%) &nbsp;|&nbsp; F (&lt; 40%)
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>
