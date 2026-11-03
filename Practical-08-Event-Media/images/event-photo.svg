@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340">
+  <defs>
+    <radialGradient id="light" cx="0.5" cy="0" r="0.9">
+      <stop offset="0" stop-color="#fff3b0"/>
+      <stop offset="1" stop-color="#3d1e6d"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="340" fill="url(#light)"/>
+  <rect x="0" y="260" width="600" height="80" fill="#5a2d0c"/>
+  <g fill="#1b1b2f">
+    <circle cx="180" cy="170" r="16"/><rect x="168" y="186" width="24" height="74" rx="8"/>
+    <circle cx="300" cy="160" r="18"/><rect x="286" y="178" width="28" height="82" rx="8"/>
+    <circle cx="420" cy="170" r="16"/><rect x="408" y="186" width="24" height="74" rx="8"/>
+  </g>
+  <text x="300" y="60" font-family="Arial" font-size="34" font-weight="bold" text-anchor="middle" fill="#3d1e6d">Annual Day 2026</text>
+  <text x="300" y="315" font-family="Arial" font-size="14" text-anchor="middle" fill="#f5deb3">Replace with a real event photo</text>
+</svg>

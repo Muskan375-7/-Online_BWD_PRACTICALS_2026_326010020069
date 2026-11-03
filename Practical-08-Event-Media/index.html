@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Day 2026 - Event Media</title>
+</head>
+<body>
+
+    <header>
+        <h1>Annual Day Celebration 2026</h1>
+        <p><i>Faculty of Computer Applications, Marwadi University</i></p>
+        <hr>
+    </header>
+
+    <main>
+        <!-- Event photograph -->
+        <section>
+            <h2>Event Photograph</h2>
+            <figure>
+                <img src="images/event-photo.svg" alt="Students performing on stage at Annual Day" width="600" height="340">
+                <figcaption>Students performing on stage at Annual Day 2026</figcaption>
+            </figure>
+        </section>
+
+        <!-- Promotional audio -->
+        <section>
+            <h2>Promotional Audio</h2>
+            <p>Listen to the official Annual Day announcement:</p>
+            <!--
+                controls  : shows play / pause / volume / seek bar
+                preload   : browser loads only metadata (duration) initially
+                The browser tries each <source> in order. Put your own file in media/promo.mp3;
+                if it is missing, the online sample file is used.
+            -->
+            <audio controls preload="metadata">
+                <source src="media/promo.mp3" type="audio/mpeg">
+                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <!-- Event video -->
+        <section>
+            <h2>Event Video</h2>
+            <p>Watch the highlights of the event:</p>
+            <!--
+                controls : play / pause / volume / fullscreen buttons
+                poster   : image shown before the video starts
+                width    : size of the video player
+                muted + loop could be added for a background video
+            -->
+            <video width="600" controls poster="images/event-photo.svg" preload="metadata">
+                <source src="media/event-video.mp4" type="video/mp4">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section>
+            <h2>Event Details</h2>
+            <ul>
+                <li><b>Date:</b> 20<sup>th</sup> December 2026</li>
+                <li><b>Time:</b> 5:00 PM onwards</li>
+                <li><b>Venue:</b> University Auditorium</li>
+                <li><b>Events:</b> Dance, Drama, Singing, Fashion Show, Prize Distribution</li>
+            </ul>
+        </section>
+    </main>
+
+    <hr>
+    <footer>
+        <p><small>&copy; 2026 Annual Day Committee</small></p>
+    </footer>
+
+</body>
+</html>
