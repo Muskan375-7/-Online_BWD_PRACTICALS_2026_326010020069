@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Canvas and SVG</title>
+</head>
+<body>
+
+    <h1>HTML5 Canvas and SVG Demo</h1>
+
+    <!-- PART 1: CANVAS -->
+    <h2>1. Canvas &ndash; Basic Shapes</h2>
+    <p>Canvas draws pixels using JavaScript.</p>
+    <canvas id="myCanvas" width="600" height="320">
+        Your browser does not support the canvas element.
+    </canvas>
+
+    <!-- PART 2: SVG -->
+    <h2>2. SVG &ndash; College Logo</h2>
+    <p>SVG (Scalable Vector Graphics) draws shapes using XML tags. It does not get blurry when zoomed.</p>
+
+    <svg width="260" height="260" viewBox="0 0 260 260">
+        <!-- Outer circle -->
+        <circle cx="130" cy="130" r="120" fill="#0b3d91" stroke="#f2b705" stroke-width="8" />
+        <!-- Inner circle -->
+        <circle cx="130" cy="130" r="88" fill="#ffffff" />
+        <!-- Book (two pages) -->
+        <polygon points="130,150 75,135 75,95 130,110" fill="#f2b705" stroke="#0b3d91" stroke-width="3" />
+        <polygon points="130,150 185,135 185,95 130,110" fill="#f2b705" stroke="#0b3d91" stroke-width="3" />
+        <line x1="130" y1="110" x2="130" y2="150" stroke="#0b3d91" stroke-width="3" />
+        <!-- Graduation cap -->
+        <polygon points="130,55 175,75 130,95 85,75" fill="#0b3d91" />
+        <line x1="175" y1="75" x2="175" y2="95" stroke="#0b3d91" stroke-width="3" />
+        <circle cx="175" cy="97" r="4" fill="#f2b705" />
+        <!-- College name -->
+        <text x="130" y="180" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#0b3d91">FCA</text>
+        <text x="130" y="200" font-family="Arial" font-size="11" text-anchor="middle" fill="#0b3d91">MARWADI UNIVERSITY</text>
+        <text x="130" y="236" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">EST. 2008</text>
+    </svg>
+         <tr>
+            <td colspan="2" style="text-align: center;">
+                <a href="https://www.marwadiuniversity.ac.in/" target="_blank">Visit Marwadi University</a>
+            </td>
+        </tr>
+
+    
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // 1. Rectangle (filled + outline)
+        ctx.fillStyle = "#4caf50";
+        ctx.fillRect(30, 30, 150, 90);
+        ctx.strokeStyle = "#1b5e20";
+        ctx.lineWidth = 4;
+        ctx.strokeRect(30, 30, 150, 90);
+
+        // 2. Circle using arc(x, y, radius, startAngle, endAngle)
+        ctx.beginPath();
+        ctx.arc(300, 75, 50, 0, 2 * Math.PI);
+        ctx.fillStyle = "#2196f3";
+        ctx.fill();
+        ctx.strokeStyle = "#0d47a1";
+        ctx.stroke();
+
+        // 3. Line
+        ctx.beginPath();
+        ctx.moveTo(400, 30);
+        ctx.lineTo(570, 120);
+        ctx.strokeStyle = "#e91e63";
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+        // 4. Triangle using path
+        ctx.beginPath();
+        ctx.moveTo(100, 160);
+        ctx.lineTo(160, 260);
+        ctx.lineTo(40, 260);
+        ctx.closePath();
+        ctx.fillStyle = "#ff9800";
+        ctx.fill();
+
+        // 5. Text
+        ctx.font = "bold 30px Arial";
+        ctx.fillStyle = "#333";
+        ctx.fillText("Hello Canvas!", 220, 210);
+
+        ctx.font = "20px Arial";
+        ctx.strokeStyle = "#9c27b0";
+        ctx.lineWidth = 1;
+        ctx.strokeText("Outlined Text", 240, 260);
+    </script>
+
+</body>
+</html>
