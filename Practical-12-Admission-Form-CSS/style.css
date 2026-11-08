@@ -1,0 +1,206 @@
+/* ===== Admission Form Styling ===== */
+
+/* Universal selector: include padding and border inside width (box model) */
+* {
+    box-sizing: border-box;
+}
+
+/* Element selector */
+body {
+    margin: 0;
+    padding: 40px 15px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+}
+
+/* Class selector + CSS box model
+   content -> padding -> border -> margin */
+.form-container {
+    max-width: 760px;
+    margin: 0 auto;              /* margin: centers the box */
+    padding: 30px 40px;          /* padding: space inside the border */
+    border: 3px solid #ffffff;   /* border */
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Text effects */
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 38px;
+    color: #4b3f9e;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(75, 63, 158, 0.35);
+}
+
+.subtitle {
+    margin: 5px 0 25px;
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    word-spacing: 2px;
+}
+
+/* Fieldset and legend */
+fieldset {
+    margin: 0 0 20px;
+    padding: 15px 20px 5px;
+    border: 2px dashed #c3b8f0;
+    border-radius: 8px;
+}
+
+legend {
+    padding: 4px 12px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #764ba2;
+    border-radius: 5px;
+}
+
+/* Two-column rows */
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.row .field {           /* descendant selector */
+    flex: 1;
+}
+
+.field {
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+label,
+.label {                /* grouping selector */
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+.req {
+    color: #e53935;
+}
+
+/* Attribute selectors for different input types */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background-color: #fafafa;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Pseudo-class: focus */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #764ba2;
+    background-color: #ffffff;
+    box-shadow: 0 0 6px rgba(118, 75, 162, 0.5);
+}
+
+/* Pseudo-element: placeholder */
+::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Pseudo-class: invalid (only after user typed something) */
+input:not(:placeholder-shown):invalid {
+    border-color: #e53935;
+}
+
+/* Radio options in one line - child selector */
+.options > label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #764ba2;
+    transform: scale(1.2);
+    margin-right: 5px;
+}
+
+.agree label {
+    font-weight: normal;
+}
+
+/* Buttons */
+.buttons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    margin: 5px 8px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+input[type="submit"] {
+    color: #fff;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+input[type="reset"] {
+    color: #764ba2;
+    background-color: #ffffff;
+    border: 2px solid #764ba2;
+}
+
+/* Pseudo-class: hover */
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    transform: translateY(-2px);
+}
+
+input[type="reset"]:hover {
+    background-color: #f3eefc;
+}
+
+/* Small screens: stack the two columns */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
