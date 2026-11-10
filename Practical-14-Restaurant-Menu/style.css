@@ -1,0 +1,96 @@
+/* ===== Restaurant Menu Custom Styles (on top of Bootstrap) ===== */
+
+body {
+    background-color: #fff8f0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Linear gradient header */
+.menu-header {
+    background: linear-gradient(135deg, #f12711 0%, #f5af19 100%);
+    border-bottom: 6px double #ffffff;
+}
+
+/* Text effects: shadow, letter spacing, uppercase */
+.restaurant-name {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 #b8360c, 6px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Sticky category bar */
+.category-nav {
+    background: linear-gradient(90deg, #3a1c71, #d76d77, #ffaf7b);
+}
+
+/* Category headings with gradient text */
+.category-title {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding-bottom: 6px;
+    font-weight: 800;
+    font-size: 2rem;
+    background: linear-gradient(90deg, #f12711, #f5af19);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    border-bottom: 4px solid #f5af19;
+}
+
+section {
+    scroll-margin-top: 60px;
+}
+
+/* Food cards: border, rounded corners and hover effect */
+.food-card {
+    border: 2px solid #f5d0a9;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(241, 39, 17, 0.25);
+    border-color: #f5af19;
+}
+
+.food-card img {
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px dashed #f5d0a9;
+}
+
+.food-card .card-title {
+    font-weight: bold;
+    color: #5a2d0c;
+}
+
+/* Price tag with radial gradient */
+.price {
+    padding: 4px 12px;
+    font-weight: bold;
+    color: #ffffff;
+    background: radial-gradient(circle, #ff6a00, #ee0979);
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* Footer */
+.menu-footer {
+    background: linear-gradient(90deg, #5a2d0c, #8b4513);
+}
+
+@media (max-width: 576px) {
+    .restaurant-name {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+}
