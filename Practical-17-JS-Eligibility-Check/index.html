@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Eligibility Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+            min-height: 100vh;
+            margin: 0;
+            padding: 30px 15px;
+            box-sizing: border-box;
+        }
+        .box {
+            max-width: 420px;
+            margin: auto;
+            padding: 25px;
+            background: #fff;
+            border-radius: 10px;
+        }
+        h1 { text-align: center; color: #185a9d; margin-top: 0; font-size: 24px; }
+        label { display: block; margin-top: 12px; font-weight: bold; }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #185a9d;
+            cursor: pointer;
+        }
+        .rules { font-size: 14px; color: #555; background: #f4f8fb; padding: 10px 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>Examination Eligibility Checker</h1>
+
+        <div class="rules">
+            <b>Eligibility Rules:</b>
+            <ul>
+                <li>Age must be 17 years or more</li>
+                <li>Attendance must be at least 75%</li>
+                <li>Internal marks must be at least 40 (out of 100)</li>
+            </ul>
+        </div>
+
+        <label for="name">Student Name</label>
+        <input type="text" id="name" placeholder="Enter name">
+
+        <label for="age">Age (years)</label>
+        <input type="number" id="age" placeholder="e.g. 18">
+
+        <label for="attendance">Attendance (%)</label>
+        <input type="number" id="attendance" placeholder="e.g. 80">
+
+        <label for="marks">Internal Marks (out of 100)</label>
+        <input type="number" id="marks" placeholder="e.g. 65">
+
+        <button onclick="checkEligibility()">Check Eligibility</button>
+    </div>
+
+    <script>
+        function checkEligibility() {
+            let name = document.getElementById("name").value.trim();
+            let age = parseInt(document.getElementById("age").value);
+            let attendance = parseFloat(document.getElementById("attendance").value);
+            let marks = parseFloat(document.getElementById("marks").value);
+
+            // Input validation
+            if (name === "") {
+                alert("Please enter the student's name.");
+                return;
+            }
+            if (isNaN(age) || age <= 0 || age > 100) {
+                alert("Please enter a valid age.");
+                return;
+            }
+            if (isNaN(attendance) || attendance < 0 || attendance > 100) {
+                alert("Attendance must be between 0 and 100.");
+                return;
+            }
+            if (isNaN(marks) || marks < 0 || marks > 100) {
+                alert("Marks must be between 0 and 100.");
+                return;
+            }
+
+            // Confirm dialog before checking
+            let ok = confirm("Check eligibility for " + name + "?\n\n" +
+                             "Age: " + age + "\nAttendance: " + attendance + "%\nMarks: " + marks);
+            if (!ok) {
+                return;
+            }
+
+            // Conditional statements: nested if...else
+            if (age >= 17 && attendance >= 75 && marks >= 40) {
+                alert("Congratulations " + name + "!\n\nYou are ELIGIBLE for the examination.");
+            } else {
+                let reasons = "";
+
+                if (age < 17) {
+                    reasons += "- Age is less than 17 years\n";
+                }
+                if (attendance < 75) {
+                    reasons += "- Attendance is below 75% (short by " + (75 - attendance).toFixed(1) + "%)\n";
+                }
+                if (marks < 40) {
+                    reasons += "- Internal marks are below 40\n";
+                }
+
+                alert("Sorry " + name + ", you are NOT ELIGIBLE for the examination.\n\nReason(s):\n" + reasons);
+
+                // Prompt dialog: special permission for low attendance
+                if (attendance >= 65 && attendance < 75 && age >= 17 && marks >= 40) {
+                    let reason = prompt("Your attendance is between 65% and 75%.\n" +
+                                        "Enter a medical reason to request special permission:");
+                    if (reason !== null && reason.trim() !== "") {
+                        alert("Your request has been sent to the HOD.\nReason: " + reason);
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
